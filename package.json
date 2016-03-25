@@ -23,7 +23,7 @@
   "devDependencies": {
     "angular": "^1.5.1",
     "angular-electron": "^0.2.1",
-    "angular-formly": "^7.5.0",
+    "angular-formly": "^8.2.0",
     "angular-formly-templates-bootstrap": "^6.3.0",
     "angular-loading-bar": "^0.9.0",
     "angular-resource": "^1.5.1",
