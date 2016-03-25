@@ -1,6 +1,3 @@
-# tox-wbc-mgr-app
-Unofficial Webcast Manager App based on electron and AngularJS
-
 [![GitHub release][github-image-release]][github-url]
 [![GitHub downloads all][github-image-downloads-all]][github-url]
 [![dependency Status][dependency-image]][dependency-url]
