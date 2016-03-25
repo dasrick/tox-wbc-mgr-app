@@ -1,0 +1,8 @@
+{
+  "security.sidebar.icon": "fa-server",
+  "security.sidebar.label": "security",
+  "status.sidebar.title": "security",
+
+  "security.common.singular.title": "security",
+  "security.common.plural.title": "security"
+}

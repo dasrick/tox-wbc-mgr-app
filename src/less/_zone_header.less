@@ -1,0 +1,43 @@
+// vars - ToDo vereinheitlichen und auslagern  /////////////////////////////////////////////////////////////////////////
+@header-buttons-witdh: 64px;
+@header-padding-top: 8px;
+@header-padding-right: @basic-padding;
+@header-padding-left: @header-buttons-witdh + @basic-padding;
+
+// layout //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+header {
+  top: 0;
+  height: @header-height;
+
+  padding-top: @header-padding-top;
+  padding-left: @header-padding-left;
+  padding-right: @header-padding-right;
+
+  //border-bottom: 1px solid @table-border-color;
+
+  span:nth-child(1) {
+    font-weight: 300;
+  }
+  span:nth-child(2) {
+    font-weight: 600;
+  }
+
+  .btn {
+    padding: 0;
+  }
+}
+
+// theme ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+header {
+  @import (multiple) '../../node_modules/bootstrap/less/bootstrap';
+  @import (multiple) '_bootstrap_variables_basic';
+  @import '_bootstrap_variables_header';
+  font-family: @font-family-base;
+  font-size: @font-size-base;
+  line-height: @line-height-base;
+  color: @text-color;
+  background-color: @body-bg;
+}
+// mixins //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// media-queries ///////////////////////////////////////////////////////////////////////////////////////////////////////

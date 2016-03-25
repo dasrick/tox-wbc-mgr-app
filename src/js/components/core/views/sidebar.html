@@ -1,0 +1,27 @@
+<aside class="sidebar">
+    <section class="section-body">
+        <ul class="list-unstyled level-list">
+            <li>
+                <p>
+                    <span class="title" translate="core.structure.sidebar.system.label"></span>
+                </p>
+                <ul class="list-unstyled">
+                    <li>
+                        <a ui-sref="app.base.status"
+                           title="{{'status.sidebar.title'|translate}}">
+                            <i class="fa fa-fw {{'status.sidebar.icon'|translate}}"></i>
+                            <span class="title" translate="status.sidebar.label"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a ui-sref="app.security.login">
+                            <i class="fa fa-fw fa-gear"></i>
+                            <span class="title" >Login test</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+</aside>
+<aside class="content" ui-view="content"></aside>

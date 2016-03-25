@@ -1,0 +1,21 @@
+<div class="row">
+    <div class="col-xs-4 text-left">
+        <p>
+            v{{coreVm.app.version}}
+            <i nxg-if="coreVm.app.updateCheck"
+               class="fa fa-fw fa-refresh fa-spin text-info"></i>
+            <i ng-if="coreVm.app.updateAvailable"
+               class="fa fa-fw fa-refresh fa-spin text-success"
+               title="{{'core.msg.autoupdater.update-available'|translate}}"></i>
+            <i ng-if="coreVm.app.updateDownloaded"
+               class="fa fa-fw fa-exclamation-triangle text-warning"
+               title="{{'core.msg.autoupdater.downloaded'|translate}}"></i>
+        </p>
+    </div>
+    <div class="col-xs-4 text-center">
+        <p>Made with <i class="fa fa-fw fa-heart text-danger"></i> by dasrick.</p>
+    </div>
+    <div class="col-xs-4 text-right">
+        <p>...</p>
+    </div>
+</div>
