@@ -3,9 +3,11 @@
 var appName = 'tox-wbc-mgr-app';
 var angular = require('angular');
 
+require('angular-cache');
 require('angular-electron');
 require('angular-formly');
 require('angular-formly-templates-bootstrap');
+require('angular-jwt');
 require('angular-loading-bar');
 require('angular-resource');
 require('angular-sanitize');
@@ -17,9 +19,11 @@ require('angular-ui-router');
 require('mi-angular-resource-builder');
 
 var requires = [
+  'angular-cache',
   'angular-electron',
   'formly',
   'formlyBootstrap',
+  'angular-jwt',
   'angular-loading-bar',
   'ngResource',
   'ngSanitize',
