@@ -9,7 +9,7 @@ var windowStateKeeper = require('electron-window-state');
 var os = require('os');
 var platform = os.platform() + '_' + os.arch();
 var version = app.getVersion();
-var releaseUrl = 'https://tox-electron-sample-nuts.herokuapp.com/update/' + platform + '/' + version;
+var releaseUrl = 'https://tox-wbc-mgr-app-nuts.herokuapp.com/update/' + platform + '/' + version;
 
 var mainWindow = null;
 
