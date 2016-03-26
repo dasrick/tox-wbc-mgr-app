@@ -4,7 +4,11 @@
  * @ngInject
  */
 module.exports = require('angular')
-  .module('shared', [])
+  .module('shared', [
+    require('./mi-directive').name
+  ])
+
+  .factory('CurrentUserService', require('./service/CurrentUserService'))
 
   // mi-angular-resource-builder ///////////////////////////////////////////////////////////////////////////////////////
   .config(['ResourceBuilderProvider', function (ResourceBuilderProvider) {

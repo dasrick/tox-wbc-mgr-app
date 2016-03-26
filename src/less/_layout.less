@@ -25,6 +25,15 @@ main {
     &.content {
       left: 0;
       right: 0;
+      section.section-head {
+        height: @section-head-height;
+        top: 0;
+        padding: @basic-padding @basic-padding 0;
+      }
+      section.section-body {
+        top: @section-head-height;
+        padding: 0 @basic-padding @basic-padding;
+      }
     }
     &.sidebar + .content {
       left: @sidebar-width;

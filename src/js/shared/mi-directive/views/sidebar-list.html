@@ -1,0 +1,13 @@
+<ul>
+    <li ng-if="list.length > 0" ng-repeat="item in list"
+        ng-class="{'selected':(item.uiState|includedByState)}">
+        <a ng-if="item.type==='link'"
+           ui-state="item.uiState"
+           ui-state-params="item.uiStateParams"
+           ui-state-opts="item.uiStateOpts"
+           title="{{ item.title }}">
+            <i ng-if="item.icon!==undefined" class="fa fa-fw {{item.icon}}"></i>
+            <span class="title">{{::item.label}}</span>
+        </a>
+    </li>
+</ul>

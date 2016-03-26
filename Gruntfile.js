@@ -136,6 +136,15 @@ module.exports = function (grunt) {
           },
           {
             expand: true,
+            cwd: 'src/js/shared/',
+            src: ['**/views/*'],
+            dest: 'build/views/',
+            rename: function (dest, src) {
+              return dest + src.replace('/views/', '/');
+            }
+          },
+          {
+            expand: true,
             cwd: 'src/js/components/',
             src: ['**/translations/*'],
             dest: 'build/i18n/',

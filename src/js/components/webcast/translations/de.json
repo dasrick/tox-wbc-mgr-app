@@ -1,0 +1,49 @@
+{
+  "webcast.sidebar.icon": "fa-user",
+  "webcast.sidebar.label": "Webcasts",
+  "webcast.sidebar.title": "Webcasts",
+
+  "webcast.common.singular.title": "Webcast",
+  "webcast.common.plural.title": "Webcasts",
+
+  "webcast.list.headline.label": "Webcastliste",
+  "webcast.list.description": "... blh bla ...",
+
+  "webcast.nav-tabs.icon": "fa-gears",
+  "webcast.nav-tabs.label": "Einstellungen",
+  "webcast.nav-tabs.title": "Einstellungen",
+
+  "webcast.form.name.label": "Name",
+  "webcast.form.name.placeholder": "Geben Sie einen Namen an",
+  "webcast.form.hdsUrl.label": "HDS-URL",
+  "webcast.form.hdsUrl.placeholder": "Geben Sie einen URL an",
+  "webcast.form.hlsUrl.label": "HLS-URL",
+  "webcast.form.hlsUrl.placeholder": "Geben Sie einen URL an",
+  "webcast.form.dashUrl.label": "Dash-URL",
+  "webcast.form.dashUrl.placeholder": "Geben Sie einen URL an",
+  "webcast.form.broadcast.serverUrl.label": "Broadcast Server-URL",
+  "webcast.form.broadcast.serverUrl.placeholder": "Geben Sie einen URL an",
+  "webcast.form.broadcast.streamName.label": "Broadcast Stream-Name",
+  "webcast.form.broadcast.streamName.placeholder": "Geben Sie einen Stream-Namen an",
+  "webcast.form.logoUrl.label": "Logo",
+  "webcast.form.logoUrl.placeholder": "Geben Sie einen URL an",
+  "webcast.form.backgroundColor.label": "Hintergundfarbe",
+  "webcast.form.backgroundColor.placeholder": "Geben Sie einen Farbwert (Beispiel: #ccff33) an",
+  "webcast.form.showQnA.label": "QnA anzeigen",
+  "webcast.form.showChat.label": "Chat anzeigen",
+  "webcast.form.showSlides.label": "Slides anzeigen",
+  "webcast.form.showDataminerForm.label": "Dataminer aktivieren",
+
+  "webcast.headline.general.title": "Allgemeines",
+  "webcast.headline.theme.title": "Design",
+  "webcast.headline.prelive.title": "Prelive",
+  "webcast.headline.postlive.title": "Postlive",
+  "webcast.headline.live.title": "Live",
+
+  "webcast.msg.all.error": "Fehler beim Aufruf der Webcasts",
+  "webcast.msg.get.error": "Fehler beim Aufruf des Webcasts",
+  "webcast.msg.create.success": "Webcast wurde erfolgreich angelegt",
+  "webcast.msg.create.error": "Beim Anlegen eines neuen Webcasts ist ein Fehler aufgetreten",
+  "webcast.msg.update.success": "Webcast wurde erfolgreich aktualisiert",
+  "webcast.msg.update.error": "Beim Aktualisieren eines Webcasts ist ein Fehler aufgetreten"
+}

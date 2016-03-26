@@ -1,0 +1,28 @@
+aside.content .controlbar,
+.controlbar {
+  margin-bottom: 0;
+  > .panel-heading {
+    min-height: 50px; // ToDo should be removed ... later
+    max-height: 50px; // ToDo should be removed ... later
+    height: 50px; // ToDo should be removed ... later
+  }
+  .panel-body {
+    padding: 10px 15px;
+    min-height: 55px; // ToDo should be removed ... later
+    max-height: 55px; // ToDo should be removed ... later
+    height: 55px; // ToDo should be removed ... later
+  }
+  // overwrite bootstrap stuff
+  .breadcrumb {
+    padding: 0;
+    background-color: transparent;
+    li:last-child {
+      font-weight: 600;
+    }
+  }
+  .nav-tabs {
+    > li > a {
+      padding: 6px 12px;
+    }
+  }
+}

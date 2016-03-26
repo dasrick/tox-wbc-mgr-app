@@ -1,0 +1,28 @@
+<div>
+    <div class="panel panel-default controlbar controlbar-detailview">
+        <div class="panel-heading">
+            <div ng-if="itemsHead.length > 0" ng-repeat="item in itemsHead">
+                <ul ng-if="item.type=='breadcrumb' && item.segments.length > 0" class="breadcrumb panel-title">
+                    <li ng-repeat="item in item.segments"
+                        ng-include="'./views/mi-directive/controlbar-elements.html'"></li>
+                </ul>
+            </div>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-xs-7 text-left">
+                    <ul ng-if="itemsLeft.length > 0" class="hmenu">
+                        <li ng-repeat="item in itemsLeft"
+                            ng-include="'./views/mi-directive/controlbar-elements.html'"></li>
+                    </ul>
+                </div>
+                <div class="col-xs-5 text-right">
+                    <ul ng-if="itemsRight.length > 0" class="hmenu">
+                        <li ng-repeat="item in itemsRight"
+                            ng-include="'./views/mi-directive/controlbar-elements.html'"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -4,5 +4,23 @@
   "status.sidebar.title": "security",
 
   "security.common.singular.title": "security",
-  "security.common.plural.title": "security"
+  "security.common.plural.title": "security",
+
+  "security.form.login.header": "Anmeldung",
+  "security.form.login.msg": "Geben Sie hier bitte ihre Login-Daten ein.",
+
+  "security.form.email.label": "E-Mail",
+  "security.form.email.placeholder": "name@example.com",
+  "security.form.password.label": "Passwort",
+  "security.form.password.placeholder": "Passwort",
+  "security.form.password-confirm.label": "Passwort wiederholen",
+  "security.form.password-confirm.placeholder": "Passwort wiederholen",
+  "security.form.password-confirm.error": "Keine Übereinstimmung",
+
+  "security.form.btn.login.label": "Anmelden",
+
+  "security.msg.login.error.unknown": "Bei der Anmeldung ist ein unbekannter Fehler aufgetreten.",
+  "security.msg.login.error.401": "Ihre Zugansdaten sind inkorrekt",
+  "security.msg.login.error.404": "Der Login-Service ist aktuell nicht erreichbar.",
+  "security.msg.login.error.user_locked": "Ihr Zugang ist gesperrt. Wenden Sie sich bitte an Ihren Adminsitrator."
 }

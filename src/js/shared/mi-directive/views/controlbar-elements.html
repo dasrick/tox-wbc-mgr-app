@@ -1,0 +1,54 @@
+<!-- link with uiState -->
+<a ng-if="item.type=='link' && item.uiState!==undefined"
+   ui-state="item.uiState"
+   ui-state-params="item.uiStateParams"
+   ui-state-opts="item.uiStateOpts"
+   title="{{item.title}}"
+   ng-class="item.class">
+    <i ng-if="item.icon!==undefined && item.icon!==''" class="fa fa-fw {{item.icon}}"></i>
+    <span class="title">{{item.label}}</span>
+</a>
+
+<!-- link with href -->
+<a ng-if="item.type=='link' && item.href!==undefined"
+   ng-href="{{item.href}}"
+   title="{{item.title}}"
+   target="{{item.target!==undefined ? item.target : '_self'}}"
+   ng-class="item.class">
+    <i ng-if="item.icon!==undefined && item.icon!==''" class="fa fa-fw {{item.icon}}"></i>
+    <span class="title">{{item.label}}</span>
+</a>
+
+
+<!-- link with click -->
+<a ng-if="item.type=='link' && item.click!==undefined"
+   ng-click="item.click()"
+   title="{{item.title}}"
+   ng-class="item.class">
+    <i ng-if="item.icon!==undefined && item.icon!==''" class="fa fa-fw {{item.icon}}"></i>
+    <span class="title">{{item.label}}</span>
+</a>
+
+<!-- plain text -->
+<span ng-if="item.type=='text' || item.type===undefined" class="title" title="{{item.title}}">{{item.label}}</span>
+
+<!--
+nxxxg-disabled="(item.icon!==undefined && item.formcheck===true && theForm.$invalid!==true && theForm.$pristine!==true)"
+-->
+
+<!-- nav-tabs with uiState -->
+<ul ng-if="item.type=='nav-tabs'" class="nav nav-tabs">
+    <li ng-if="item.children.length > 0"
+        ng-repeat="tab in item.children"
+        ng-class="{'active':(tab.uiState|isState)}">
+        <a ng-if="tab.uiState!==undefined"
+           ui-state="tab.uiState"
+           ui-state-params="tab.uiStateParams"
+           ui-state-opts="tab.uiStateOpts"
+           title="{{tab.title}}"
+           ng-class="tab.class">
+            <i ng-if="tab.icon!==undefined && tab.icon!==''" class="fa fa-fw {{tab.icon}}"></i>
+            <span class="title">{{tab.label}}</span>
+        </a>
+    </li>
+</ul>

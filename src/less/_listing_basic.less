@@ -1,0 +1,100 @@
+// ToDo vars umbenennen und auslagern
+@der-lustige-seitenabstand: 7px;
+@element-abstand-unten: 5px;
+@element-abstand-innen: 10px;
+@element-bg: #ffffff;
+@element-hover-bg: #f9f9f9;
+
+// schrift farbe immer 777
+// schrift größe title 20px/26 subtitle 16/26
+// menu icon: fa-ellipsis-v
+
+ul.listing-basic {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: @element-abstand-unten;
+  .item-outer {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: @element-abstand-unten;
+    &.state-left {
+      padding-left: @der-lustige-seitenabstand;
+    }
+    &.state-right {
+      padding-right: @der-lustige-seitenabstand;
+    }
+    .item-inner {
+      .getColLayout();
+      padding: @element-abstand-innen;
+      color: @text-color;
+      background-color: @element-bg;
+      &:hover {
+        background-color: @element-hover-bg;
+        .dimmable {
+          .getDimmer(@element-hover-bg);
+        }
+      }
+      .dimmable {
+        position: relative;
+        white-space: nowrap;
+        overflow-x: hidden;
+        .getDimmer(@element-bg);
+        .dimmer-right {
+          position: absolute;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          width: 10%;
+        }
+      }
+      .title {
+        font-size: 20px;
+        line-height: 26px;
+      }
+      .subtitle {
+        font-size: 16px;
+        line-height: 26px;
+      }
+      .item-menu {
+        //position: absolute;
+        top: 0;
+        right: 0;
+      }
+    }
+  }
+}
+
+// mixins //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+.getDimmer(@hex) {
+  .dimmer {
+    background: fade(@hex, 0%);
+    background: -moz-linear-gradient(left, fade(@hex, 0%) 0%, fade(@hex, 100%) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, fade(@hex, 0%)), color-stop(100%, fade(@hex, 100%)));
+    background: -webkit-linear-gradient(left, fade(@hex, 0%) 0%, fade(@hex, 100%) 100%);
+    background: -o-linear-gradient(left, fade(@hex, 0%) 0%, fade(@hex, 100%) 100%);
+    background: -ms-linear-gradient(left, fade(@hex, 0%) 0%, fade(@hex, 100%) 100%);
+    background: linear-gradient(to right, fade(@hex, 0%) 0%, fade(@hex, 100%) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=@hex, endColorstr=@hex, GradientType=1);
+  }
+}
+
+.getColLayout() {
+  margin: 0;
+  > .col-l, > .col-m, > .col-r {
+    position: relative;
+    &:empty {
+      display: none;
+    }
+  }
+  > .col-l {
+    width: 100px;
+  }
+  > .col-m {
+    //width: 333px;
+  }
+  > .col-r {
+    width: 100px;
+  }
+}

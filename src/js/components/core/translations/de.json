@@ -8,8 +8,38 @@
   "core.appmenu.app.about.label": "Über",
   "core.appmenu.app.update.label": "Auf Aktualisierung prüfen...",
 
-  "core.structure.sidebar.system.label": "System",
-
   "core.msg.autoupdater.downloaded": "Eine Aktualisierung der Applikation wurde heruntergeladen und kann nun installiert werden.",
-  "core.msg.autoupdater.update-available": "Eine Aktualisierung der Applikation ist verfügbar und wird heruntergeladen."
+  "core.msg.autoupdater.update-available": "Eine Aktualisierung der Applikation ist verfügbar und wird heruntergeladen.",
+
+  "core.section.webcastsettings.icon": "fa-feed",
+  "core.section.webcastsettings.label": "Webcast Einstellungen",
+  "core.section.webcastsettings.title": "Webcast Einstellungen",
+
+  "core.alert.danger.icon": "fa-minus-circle",
+  "core.alert.info.icon": "fa-info-circle",
+  "core.alert.success.icon": "fa-check-circle",
+  "core.alert.warning.icon": "fa-exclamation-circle",
+
+  "core.create.icon": "fa-plus-circle",
+  "core.create.title": "Erstellen",
+  "core.create.label": "Erstellen",
+
+  "core.save.icon": "fa-save",
+  "core.save.title": "Speichern",
+  "core.save.label": "Speichern",
+
+  "core.update.icon": "fa-save",
+  "core.update.title": "Aktualisieren",
+  "core.update.label": "Aktualisieren",
+
+  "core.cancel.icon": "fa-ban",
+  "core.cancel.title": "Abbrechen",
+  "core.cancel.label": "Abbrechen",
+
+  "core.preview.icon": "fa-desktop",
+  "core.preview.title": "Vorschau",
+  "core.preview.label": "Vorschau",
+
+  "core.select.customer.title": "Ausgewählter Kunde",
+  "core.select.customer.label": "Kunde wählen"
 }

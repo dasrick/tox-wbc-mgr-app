@@ -1,0 +1,26 @@
+<div>
+    <ul ng-if="list.length > 0" class="listing-basic">
+        <li ng-repeat="item in list">
+            <div class="item-outer state-left"
+                 ng-class="(item.stateLable!==undefined) ? 'label-' + item.stateLable : 'label-default'">
+                <a ng-href="{{(item.disabled!==undefined && item.disabled) ? '' : item.hrefDetail}}"
+                   ng-disabled="(item.disabled!==undefined && item.disabled)">
+                    <div class="item-inner row">
+                        <div class="col-l" ng-if="item.preview!==undefined"></div>
+                        <div class="col-m">
+                            <div class="title dimmable">
+                                {{::item.title}}
+                                <div class="dimmer dimmer-right"></div>
+                            </div>
+                            <div ng-if="(item.subtitle!==undefined)" class="subtitle dimmable">
+                                {{::item.subtitle}}
+                                <div class="dimmer dimmer-right"></div>
+                            </div>
+                        </div>
+                        <div class="col-r" ng-if="item.menu!==undefined"></div>
+                    </div>
+                </a>
+            </div>
+        </li>
+    </ul>
+</div>

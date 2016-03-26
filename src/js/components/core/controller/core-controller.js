@@ -17,7 +17,7 @@ module.exports = function ($log, $timeout, $translate, app, autoUpdater, ipcRend
   };
 
 
-  $log.info('core-controller userData', app.getPath('userData'));
+  // $log.info('core-controller userData', app.getPath('userData'));
 
   // basic content stuff ===============================================================================================
 

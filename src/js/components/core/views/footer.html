@@ -2,7 +2,7 @@
     <div class="col-xs-4 text-left">
         <p>
             v{{coreVm.app.version}}
-            <i nxg-if="coreVm.app.updateCheck"
+            <i ng-if="coreVm.app.updateCheck"
                class="fa fa-fw fa-refresh fa-spin text-info"></i>
             <i ng-if="coreVm.app.updateAvailable"
                class="fa fa-fw fa-refresh fa-spin text-success"

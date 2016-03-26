@@ -1,0 +1,56 @@
+<div>
+    <ul ng-if="list.length > 0" class="listing-advanced">
+        <li ng-repeat="item in list"
+            class="label-success"
+            ng-class="{
+            'show-menu':item.showMenu,
+            'show-preview':item.showPreview,
+            'state-left':item.showStateLeft,
+            'state-right':item.showStateRight,
+            'label-success':item.stateLabel=='success',
+            'label-warning':item.stateLabel=='warning',
+            'label-danger':item.stateLabel=='danger',
+            'label-primary':item.stateLabel=='primary',
+            'label-default':item.stateLabel===undefined
+            }">
+            <div class="item-outer">
+                <div class="item-inner">
+                    <div class="content">
+                        <a ng-href="{{(item.disabled!==undefined && item.disabled) ? '' : item.hrefDetail}}"
+                           ng-disabled="(item.disabled!==undefined && item.disabled)">
+                            <div class="content-inner">
+                                <div ng-if="item.showPreview" class="preview">
+                                    <img class="img-responsive"
+                                         ng-src="{{::item.previewUrl}}">
+                                </div>
+                                <div class="details">
+                                    <div ng-if="(item.title!==undefined)" class="title dimmable">
+                                        {{::item.title}}
+                                        <div class="dimmer dimmer-right"></div>
+                                    </div>
+                                    <div ng-if="(item.subtitle!==undefined)" class="subtitle dimmable">
+                                        {{::item.subtitle}}
+                                        <div class="dimmer dimmer-right"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="menu">
+                        <div ng-if="item.showMenu"
+                             class="item-menu btn-group" uib-dropdown is-open="status.isopen">
+                            <button type="button" class="btn btn-link" uib-dropdown-toggle ng-disabled="disabled">
+                                <i class="fa fa-fw fa-ellipsis-v"></i>
+                            </button>
+                            <ul uib-dropdown-menu class="dropdown-menu-right">
+                                <li ng-repeat="item in item.menu"
+                                    ng-class="{'divider':item.type=='divider'}"
+                                    ng-include="'./views/mi-directive/controlbar-elements.html'"></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,126 @@
+// ToDo vars umbenennen und auslagern
+@der-lustige-seitenabstand: 7px;
+@element-abstand-unten: 5px;
+@element-abstand-innen: 10px;
+@element-bg: #ffffff;
+@element-hover-bg: #f9f9f9;
+@listing-advanced-menu-width: 40px;
+@listing-advanced-preview-width: 100px;
+
+ul.listing-advanced {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: @element-abstand-unten;
+  .item-outer {
+    margin-bottom: @element-abstand-unten;
+  }
+  .item-inner {
+    color: @text-color;
+    background-color: @element-bg;
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    &:hover {
+      background-color: @element-hover-bg;
+      .dimmable {
+        .getDimmer(@element-hover-bg);
+      }
+    }
+  }
+  .content,
+  .menu {
+    display: table-cell;
+  }
+  .content {
+  }
+  .menu {
+    display: none;
+    i + span {
+      margin-left: .25em;
+    }
+  }
+  .content-inner {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+  }
+  .details,
+  .preview {
+    display: table-cell;
+    padding: @element-abstand-innen;
+  }
+  .details {
+    .title {
+      font-size: 20px;
+      line-height: 26px;
+    }
+    .subtitle {
+      font-size: 16px;
+      line-height: 26px;
+    }
+  }
+  .preview {
+    display: none;
+    img {
+      display: inline-block;
+      vertical-align: top;
+      max-width: @listing-advanced-preview-width;
+      max-height: @listing-advanced-preview-width * 9 / 16;
+    }
+  }
+  .state-left .item-outer {
+    padding-left: @der-lustige-seitenabstand;
+  }
+  .state-right .item-outer {
+    padding-right: @der-lustige-seitenabstand;
+  }
+  .show-menu {
+    .menu {
+      display: table-cell;
+      width: @listing-advanced-menu-width;
+      vertical-align: top;
+      .btn {
+        padding: 10px;
+      }
+      .btn-group.open .dropdown-toggle.btn-link {
+        //background-color: darken(@element-hover-bg, 5%);
+      }
+    }
+  }
+  .show-preview {
+    .preview {
+      display: table-cell;
+      width: @listing-advanced-preview-width;
+    }
+  }
+  .dimmable {
+    position: relative;
+    white-space: nowrap;
+    overflow-x: hidden;
+    .getDimmer(@element-bg);
+    .dimmer-right {
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 10%;
+    }
+  }
+  .dropdown-menu {
+    box-shadow: 0 0 2px rgba(0,0,0,.35);
+  }
+}
+
+// mixins //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+.getDimmer(@hex) {
+  .dimmer {
+    background: fade(@hex, 0%);
+    background: -moz-linear-gradient(left, fade(@hex, 0%) 0%, fade(@hex, 100%) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, fade(@hex, 0%)), color-stop(100%, fade(@hex, 100%)));
+    background: -webkit-linear-gradient(left, fade(@hex, 0%) 0%, fade(@hex, 100%) 100%);
+    background: -o-linear-gradient(left, fade(@hex, 0%) 0%, fade(@hex, 100%) 100%);
+    background: -ms-linear-gradient(left, fade(@hex, 0%) 0%, fade(@hex, 100%) 100%);
+    background: linear-gradient(to right, fade(@hex, 0%) 0%, fade(@hex, 100%) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=@hex, endColorstr=@hex, GradientType=1);
+  }
+}

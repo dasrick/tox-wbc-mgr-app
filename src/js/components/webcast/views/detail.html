@@ -1,0 +1,73 @@
+<section class="section-head">
+    <div controlbar
+         controlbar-items-head="webcastDetailVm.controlbarItemsHead"
+         controlbar-items-left="webcastDetailVm.controlbarItemsLeft"
+         controlbar-items-right="webcastDetailVm.controlbarItemsRight"></div>
+</section>
+
+<section class="section-body">
+    <form name="theForm">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title" translate="webcast.headline.general.title"></h4>
+                    </div>
+                    <div class="panel-body">
+                        <formly-form model="webcastDetailVm.model"
+                                     fields="webcastDetailVm.fieldsGeneral"
+                                     options="webcastDetailVm.options">
+                        </formly-form>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title" translate="webcast.headline.theme.title"></h4>
+                    </div>
+                    <div class="panel-body">
+                        <formly-form model="webcastDetailVm.model"
+                                     fields="webcastDetailVm.fieldsTheme"
+                                     options="webcastDetailVm.options">
+                        </formly-form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title" translate="webcast.headline.prelive.title"></h4>
+                    </div>
+                    <div class="panel-body">
+                        <formly-form model="webcastDetailVm.model"
+                                     fields="webcastDetailVm.fieldsPrelive"
+                                     options="webcastDetailVm.options">
+                        </formly-form>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title" translate="webcast.headline.live.title"></h4>
+                    </div>
+                    <div class="panel-body">
+                        <formly-form model="webcastDetailVm.model"
+                                     fields="webcastDetailVm.fieldsLive"
+                                     options="webcastDetailVm.options">
+                        </formly-form>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title" translate="webcast.headline.postlive.title"></h4>
+                    </div>
+                    <div class="panel-body">
+                        <formly-form model="webcastDetailVm.model"
+                                     fields="webcastDetailVm.fieldsPostlive"
+                                     options="webcastDetailVm.options">
+                        </formly-form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</section>

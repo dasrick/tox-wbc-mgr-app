@@ -6,6 +6,7 @@ var ModuleName = 'core',
 module.exports = angular.module(ModuleName, [])
 
   .controller('CoreController', require('./controller/core-controller'))
+  .controller('SidebarController', require('./controller/sidebar-controller'))
 
   // routing
   .config(function ($stateProvider) {

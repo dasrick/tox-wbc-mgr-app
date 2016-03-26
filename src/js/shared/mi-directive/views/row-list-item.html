@@ -1,0 +1,23 @@
+<div class="item-outer state-left"
+     ng-class="(item.state!==undefined) ? 'label-' + item.state : 'label-default'">
+    <a ui-sref="{{(item.disabled!==undefined && item.disabled) ? '.' : route}}"
+       ng-disabled="(item.disabled!==undefined && item.disabled)">
+        <div class="item-inner">
+            <span ng-if="item.reviewStatus!==undefined"
+                  ng-class="(item.reviewStatus=='none') ? 'fa-eye-slash text-muted' : 'fa-eye text-warning'"
+                  class="fa fa-fw"
+                  title="{{'core.icon.under-review.title' | translate}}"></span>
+            <span ng-if="item.inUse!==undefined"
+                  ng-class="(item.inUse) ? 'fa-bookmark text-success' : 'fa-bookmark-o text-muted'"
+                  class="fa fa-fw"
+                  title="{{'core.icon.in-use.title' | translate}}"></span>
+            <span ng-if="item.locked!==undefined"
+                  ng-class="(item.locked) ? 'fa-lock text-danger' : 'fa-unlock-alt text-muted'"
+                  class="fa fa-fw"
+                  title="{{'core.icon.locked.title' | translate}}"></span>
+            <span ng-if="!item.titleTranslatable" class="title">{{::item.title}}</span>
+            <span ng-if="item.titleTranslatable" class="title">{{item.title | translateModel}}</span>
+            <span class="subtitle">{{::item.subtitle}}</span>
+        </div>
+    </a>
+</div>

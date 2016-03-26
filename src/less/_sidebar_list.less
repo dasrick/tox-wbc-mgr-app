@@ -1,0 +1,77 @@
+// Vars - ToDo vereinheitlichen und auslagern  /////////////////////////////////////////////////////////////////////////
+@sidebar-list-lvl1-link-color: #555555;
+@sidebar-list-lvl1-link-hover-color: lighten(@sidebar-list-lvl1-link-color, 5%); // nicht mit kenny abgesprochen bzw. durch ihn definiert
+@sidebar-list-lvl1-link-active-color: lighten(@sidebar-list-lvl1-link-color, 10%); // nicht mit kenny abgesprochen bzw. durch ihn definiert
+@sidebar-list-lvl1-link-bg: #252525;
+@sidebar-list-lvl1-link-hover-bg: inherit;
+@sidebar-list-lvl1-link-active-bg: inherit;
+
+@sidebar-list-lvl2-link-color: #b2b2b2;
+@sidebar-list-lvl2-link-hover-color: #b2b2b2;
+@sidebar-list-lvl2-link-active-color: #777777;
+@sidebar-list-lvl2-link-bg: #2e2e2e;
+@sidebar-list-lvl2-link-hover-bg: #393939;
+@sidebar-list-lvl2-link-active-bg: #f9f9f9;
+
+@sidebar-list-border-color: #393939;
+@sidebar-list-padding-tb: 11px;
+@sidebar-list-padding-lr: @basic-padding;
+@sidebar-list-selected-border-width: 7px;
+// Layout //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+aside.sidebar ul.sidebar-list,
+ul.sidebar-list {
+  list-style: none;
+  padding-left: 0;
+  margin: -15px;
+  > li {
+    a {
+      display: block;
+      padding: @sidebar-list-padding-tb @sidebar-list-padding-lr;
+      cursor: pointer;
+      i.fa-pull-right {
+        line-height: @line-height-base;
+      }
+      &.heading .title {
+        text-transform: uppercase;
+        font-weight: 600;
+      }
+    }
+    > ul {
+      list-style: none;
+      padding-left: 0;
+      > li.selected a {
+        padding-left: (@sidebar-list-padding-lr - @sidebar-list-selected-border-width);
+      }
+    }
+  }
+}
+
+// Theme ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+.cs-2 ul.sidebar-list,
+ul.sidebar-list {
+  > li {
+    border-bottom: 1px solid @sidebar-list-border-color;
+    .getLinkColors(@sidebar-list-lvl1-link-color, @sidebar-list-lvl1-link-hover-color, @sidebar-list-lvl1-link-active-color);
+    .getLinkBgColors(@sidebar-list-lvl1-link-bg, @sidebar-list-lvl1-link-hover-bg, @sidebar-list-lvl1-link-active-bg);
+    > ul {
+      > li {
+        border-bottom: 1px solid @sidebar-list-border-color;
+        &:first-child {
+          border-top: 1px solid @sidebar-list-border-color;
+        }
+        &:last-child {
+          border-bottom: none;
+        }
+        .getLinkColors(@sidebar-list-lvl2-link-color, @sidebar-list-lvl2-link-hover-color, @sidebar-list-lvl2-link-active-color);
+        .getLinkBgColors(@sidebar-list-lvl2-link-bg, @sidebar-list-lvl2-link-hover-bg, @sidebar-list-lvl2-link-active-bg);
+        &.selected {
+          .getLinkColors(@sidebar-list-lvl2-link-active-color, @sidebar-list-lvl2-link-active-color, @sidebar-list-lvl2-link-active-color);
+          .getLinkBgColors(@sidebar-list-lvl2-link-active-bg, @sidebar-list-lvl2-link-active-bg, @sidebar-list-lvl2-link-active-bg);
+          border-left: @sidebar-list-selected-border-width solid @brand-success;
+        }
+      }
+    }
+  }
+}
+
+// MediaQueries ////////////////////////////////////////////////////////////////////////////////////////////////////////

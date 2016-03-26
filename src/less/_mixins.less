@@ -1,0 +1,45 @@
+.getColor(@color) when (iscolor(@color)) {
+  color: @color;
+}
+
+.getBackgroundColor(@color) when (iscolor(@color)) {
+  background-color: @color;
+}
+
+.getLinkColors(@color, @colorHover: inherit, @colorActive: inherit, @colorFocus: inherit) {
+  a {
+    .getLinkTagExcludeColors(@color, @colorHover, @colorActive, @colorFocus);
+  }
+}
+.getLinkTagExcludeColors(@color, @colorHover: inherit, @colorActive: inherit, @colorFocus: inherit) {
+  .getColor(@color);
+  &:hover {
+    .getColor(@colorHover);
+  }
+  &:focus {
+    .getColor(@colorFocus);
+  }
+  &:active {
+    .getColor(@colorActive);
+  }
+}
+
+.getLinkBgColors(@color, @colorHover: inherit, @colorActive: inherit, @colorFocus: inherit) {
+  a {
+    .getLinkTagExcludeBgColors(@color, @colorHover, @colorActive, @colorFocus);
+  }
+}
+
+.getLinkTagExcludeBgColors(@color, @colorHover: inherit, @colorActive: inherit, @colorFocus: inherit) {
+  .getBackgroundColor(@color);
+  &:hover {
+    .getBackgroundColor(@colorHover);
+    cursor: pointer;
+  }
+  &:focus {
+    .getBackgroundColor(@colorFocus);
+  }
+  &:active {
+    .getBackgroundColor(@colorActive);
+  }
+}

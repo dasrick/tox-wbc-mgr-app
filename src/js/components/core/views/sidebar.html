@@ -1,25 +1,25 @@
 <aside class="sidebar">
     <section class="section-body">
-        <ul class="list-unstyled level-list">
+        <ul class="sidebar-list">
             <li>
-                <p>
-                    <span class="title" translate="core.structure.sidebar.system.label"></span>
-                </p>
-                <ul class="list-unstyled">
-                    <li>
-                        <a ui-sref="app.base.status"
-                           title="{{'status.sidebar.title'|translate}}">
-                            <i class="fa fa-fw {{'status.sidebar.icon'|translate}}"></i>
-                            <span class="title" translate="status.sidebar.label"></span>
-                        </a>
-                    </li>
-                    <li>
-                        <a ui-sref="app.security.login">
-                            <i class="fa fa-fw fa-gear"></i>
-                            <span class="title" >Login test</span>
-                        </a>
-                    </li>
-                </ul>
+                <a class="heading" title="{{'core.section.webcastsettings.title'|translate}}">
+                    <i class="fa fa-fw {{'core.section.webcastsettings.icon'|translate}}"></i>
+                    <span class="title">{{'core.section.webcastsettings.label'|translate}}</span>
+                </a>
+                <!--<ul>-->
+                    <!--<li>-->
+                        <!--<ui-select ng-model="sidebarVm.selectedCustomer" theme="bootstrap" class="form-control"-->
+                                   <!--title="{{'core.select.customer.title'|translate}}">-->
+                            <!--<ui-select-match placeholder="{{'core.select.customer.label'|translate}}">-->
+                                <!--{{$select.selected.name}}-->
+                            <!--</ui-select-match>-->
+                            <!--<ui-select-choices repeat="item in sidebarVm.customers | filter: $select.search">-->
+                                <!--<div ng-bind-html="item.name | highlight: $select.search"></div>-->
+                            <!--</ui-select-choices>-->
+                        <!--</ui-select>-->
+                    <!--</li>-->
+                <!--</ul>-->
+                <div sidebar-list="sidebarVm.sidebar"></div>
             </li>
         </ul>
     </section>
