@@ -1,8 +1,35 @@
 <section class="section-head">
-    <div controlbar
-         controlbar-items-head="webcastListVm.controlbarItemsHead"
-         controlbar-items-left="webcastListVm.controlbarItemsLeft"
-         controlbar-items-right="webcastListVm.controlbarItemsRight"></div>
+    <div>
+        <div class="panel panel-default controlbar controlbar-detailview">
+            <div class="panel-heading">
+                <div ng-if="webcastListVm.controlbarItemsHead.length > 0" ng-repeat="item in webcastListVm.controlbarItemsHead">
+                    <ul ng-if="item.type=='breadcrumb' && item.segments.length > 0" class="breadcrumb panel-title">
+                        <li ng-repeat="item in item.segments">
+                            <mi-wbc-controlbar-element item="item">.</mi-wbc-controlbar-element>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-xs-7 text-left">
+                        <ul ng-if="webcastListVm.controlbarItemsLeft.length > 0" class="hmenu">
+                            <li ng-repeat="item in webcastListVm.controlbarItemsLeft">
+                                <mi-wbc-controlbar-element item="item">.</mi-wbc-controlbar-element>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-5 text-right">
+                        <ul ng-if="webcastListVm.controlbarItemsRight.length > 0" class="hmenu">
+                            <li ng-repeat="item in webcastListVm.controlbarItemsRight">
+                                <mi-wbc-controlbar-element item="item">.</mi-wbc-controlbar-element>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 <section class="section-body">
     <div listing-advanced listing-advanced-list="webcastListVm.preparedList"></div>

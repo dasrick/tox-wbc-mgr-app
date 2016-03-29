@@ -17,6 +17,7 @@ require('angular-ui-bootstrap');
 require('angular-ui-notification');
 require('angular-ui-router');
 require('mi-angular-resource-builder');
+require('mi-angular-wbc-pack');
 
 var requires = [
   'angular-cache',
@@ -32,6 +33,7 @@ var requires = [
   'ui-notification',
   'ui.router',
   'mi.ResourceBuilder',
+  'mi.WbcPack',
   require('./components').name,
   require('./shared').name
 ];
