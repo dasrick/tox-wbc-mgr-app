@@ -48,7 +48,7 @@ module.exports = {
         templateUrl: './views/core/header.html'
       },
       'main': {
-        templateUrl: './views/core/no-sidebar.html'
+        templateUrl: './views/core/1col-centerbox.html'
       },
       'footer': {
         templateUrl: './views/core/footer.html'

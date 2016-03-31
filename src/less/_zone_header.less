@@ -1,3 +1,15 @@
+// theme ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+header {
+  @import (multiple) '../../node_modules/bootstrap/less/bootstrap';
+  @import (multiple) '_bootstrap_variables_basic';
+  @import '_bootstrap_variables_header';
+  font-family: @font-family-base;
+  font-size: @font-size-base;
+  line-height: @line-height-base;
+  color: @text-color;
+  background-color: @body-bg;
+}
+
 // vars - ToDo vereinheitlichen und auslagern  /////////////////////////////////////////////////////////////////////////
 @header-buttons-witdh: 64px;
 @header-padding-top: 8px;
@@ -24,20 +36,13 @@ header {
 
   .btn {
     padding: 0;
+    .label-as-badge {
+      border-radius: 1em;
+      top: -2px;
+    }
   }
 }
 
-// theme ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
-header {
-  @import (multiple) '../../node_modules/bootstrap/less/bootstrap';
-  @import (multiple) '_bootstrap_variables_basic';
-  @import '_bootstrap_variables_header';
-  font-family: @font-family-base;
-  font-size: @font-size-base;
-  line-height: @line-height-base;
-  color: @text-color;
-  background-color: @body-bg;
-}
 // mixins //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // media-queries ///////////////////////////////////////////////////////////////////////////////////////////////////////
