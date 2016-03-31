@@ -3,7 +3,7 @@
 /**
  * @ngInject
  */
-module.exports = function ($log, $timeout, $translate, app, autoUpdater, ipcRenderer, Menu, Notification) {
+module.exports = function ($log, $timeout, $translate, app, autoUpdater, ipcRenderer, Menu, AlertService) {
   var vm = this;
   // methods
   vm.updateNow = updateNow;
@@ -59,7 +59,7 @@ module.exports = function ($log, $timeout, $translate, app, autoUpdater, ipcRend
   autoUpdater
     .on('error', function (sender, error) {
       $log.error('core auto-updater on error: ', error);
-      Notification.error({message: error, title: 'Error'});
+      AlertService.add('danger', error);
       $timeout(function () {
         setUpdateState(false, false, false);
       }, 1000);
@@ -73,7 +73,7 @@ module.exports = function ($log, $timeout, $translate, app, autoUpdater, ipcRend
       $timeout(function () {
         setUpdateState(false, true, false);
       }, 1000);
-      Notification.info($translate.instant('core.msg.autoupdater.update-available'));
+      AlertService.add('info', 'core.msg.autoupdater.update-available');
     })
     .on('update-not-available', function () {
       $log.info('core auto-updater on update-not-available');
@@ -84,7 +84,7 @@ module.exports = function ($log, $timeout, $translate, app, autoUpdater, ipcRend
     .on('update-downloaded', function () {
       $log.info('core auto-updater on update-downloaded');
       setUpdateState(false, false, true);
-      Notification.info($translate.instant('core.msg.autoupdater.downloaded'));
+      AlertService.add('info', 'core.msg.autoupdater.downloaded');
       vm.app.messageCount++;
     });
 

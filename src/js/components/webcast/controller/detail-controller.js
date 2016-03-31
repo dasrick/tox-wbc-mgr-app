@@ -3,7 +3,7 @@
 /**
  * @ngInject
  */
-module.exports = function (webcast, Notification, CurrentUserService, $scope, $state, $translate) {
+module.exports = function (webcast, AlertService, CurrentUserService, $scope, $state, $translate) {
   var vm = this;
   // functions
   vm.create = create;
@@ -30,11 +30,11 @@ module.exports = function (webcast, Notification, CurrentUserService, $scope, $s
   function create() {
     webcast.$save().then(
       function () {
-        Notification.success($translate.instant('webcast.msg.create.success'));
+        AlertService.add('success', 'webcast.msg.create.success');
         $state.go('^', {}, {reload: true});
       },
       function () {
-        Notification.error($translate.instant('webcast.msg.create.error'));
+        AlertService.add('danger', 'webcast.msg.create.error');
       }
     );
   }
@@ -42,11 +42,11 @@ module.exports = function (webcast, Notification, CurrentUserService, $scope, $s
   function update() {
     webcast.$update().then(
       function () {
-        Notification.success($translate.instant('webcast.msg.update.success'));
+        AlertService.add('success', 'webcast.msg.update.success');
         $state.go('^', {}, {reload: true});
       },
       function () {
-        Notification.error($translate.instant('webcast.msg.update.error'));
+        AlertService.add('danger', 'webcast.msg.update.error');
       }
     );
   }

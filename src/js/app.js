@@ -16,6 +16,7 @@ require('angular-translate-loader-partial');
 require('angular-ui-bootstrap');
 require('angular-ui-notification');
 require('angular-ui-router');
+require('mi-angular-alert-service');
 require('mi-angular-resource-builder');
 require('mi-angular-wbc-pack');
 
@@ -32,6 +33,7 @@ var requires = [
   'ui.bootstrap',
   'ui-notification',
   'ui.router',
+  'mi.AlertService',
   'mi.ResourceBuilder',
   'mi.WbcPack',
   require('./components').name,
@@ -190,19 +192,14 @@ angular.module(appName, requires)
   }])
   // ===================================================================================================================
 
-  // angular-ui-notification ///////////////////////////////////////////////////////////////////////////////////////////
-  .config(['NotificationProvider', function (NotificationProvider) {
-    NotificationProvider.setOptions({
-      delay: 5000,
-      startTop: 40,
-      startRight: 15,
-      verticalSpacing: 15,
-      horizontalSpacing: 15,
-      positionX: 'right',
-      positionY: 'top'
-    });
-  }])
-  // ===================================================================================================================
+  // mi-angular-alert-service //////////////////////////////////////////////////////////////////////////////////////////
+  .constant('ALERT_LEVELS', {
+    danger: {timeout: 10000},
+    warning: {timeout: 4000},
+    success: {timeout: 2000},
+    info: {timeout: 2000}
+  })
+// ===================================================================================================================
 
 ;
 

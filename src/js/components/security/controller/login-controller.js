@@ -3,7 +3,7 @@
 /**
  * @ngInject
  */
-module.exports = function (AuthService, CurrentUserService, CustomerResource, Notification, $state, $translate) {
+module.exports = function (AuthService, CurrentUserService, CustomerResource, AlertService, $state, $translate) {
   var vm = this;
   // functions
   vm.login = login;
@@ -40,7 +40,7 @@ module.exports = function (AuthService, CurrentUserService, CustomerResource, No
           default:
             msg = 'security.msg.login.error.unknown';
         }
-        Notification.error($translate.instant(msg));
+        AlertService('danger', $translate.instant(msg));
       }
     );
   }

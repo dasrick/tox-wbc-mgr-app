@@ -1,0 +1,19 @@
+.global-alerts {
+  position: absolute;
+  z-index: 10;
+  top: @header-height + (@basic-padding / 2);
+  right: @basic-padding;
+}
+
+.alert {
+  border: none;
+  border-radius: 0;
+  position: relative;
+  .transition(all ease .5s);
+  &:last-child {
+    margin-bottom: 0;
+  }
+  &:hover {
+    opacity: .8;
+  }
+}
