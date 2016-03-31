@@ -3,7 +3,7 @@
 /**
  * @ngInject
  */
-module.exports = function ($log, $timeout, $translate, app, autoUpdater, ipcRenderer, Menu, AlertService) {
+module.exports = function ($log, $timeout, $translate, app, autoUpdater, ipcRenderer, Menu, AlertService, AppDataService) {
   var vm = this;
   // methods
   vm.updateNow = updateNow;
@@ -16,18 +16,13 @@ module.exports = function ($log, $timeout, $translate, app, autoUpdater, ipcRend
     messageCount: 0
   };
 
-
-  // $log.info('core-controller userData', app.getPath('userData'));
-
   // basic content stuff ===============================================================================================
 
   if (angular.isUndefined(vm.os)) {
-    // $log.info('core-controller - trigger get-os-data');
     ipcRenderer.send('get-os-data');
   }
 
   ipcRenderer.on('send-os-data', function (sender, data) {
-    // $log.info('core-controller - catch os-data: ', data);
     vm.os = data;
 
     // build the app menu
@@ -40,9 +35,7 @@ module.exports = function ($log, $timeout, $translate, app, autoUpdater, ipcRend
 
   ipcRenderer.send('get-node-env');
   ipcRenderer.on('send-node-env', function (sender, data) {
-    $log.info('core-controller - catch node-env: ', data);
     if (data !== 'development') {
-      $log.warn('core-controller - trigger get-release-url');
       ipcRenderer.send('get-release-url');
     }
   });
@@ -50,10 +43,12 @@ module.exports = function ($log, $timeout, $translate, app, autoUpdater, ipcRend
   // autoUpdater stuff =================================================================================================
 
   ipcRenderer.on('send-release-url', function (sender, releaseUrl) {
-    $log.info('core-controller - releaseUrl: ', releaseUrl);
-    $log.info('trigger auto updater');
-    autoUpdater.setFeedURL(releaseUrl);
-    autoUpdater.checkForUpdates();
+    // trigger only once per app-run
+    if (AppDataService.getUpdateExecuted() !== true) {
+      autoUpdater.setFeedURL(releaseUrl);
+      autoUpdater.checkForUpdates();
+      AppDataService.setUpdateExecuted(true);
+    }
   });
 
   autoUpdater

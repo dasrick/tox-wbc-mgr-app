@@ -51,19 +51,13 @@ app.on('ready', function () {
     mainWindow = null;
   });
 
-  // mainWindow.webContents.on('dom-ready', function () {
-  //   var cssFileName = (app.isDarkMode()) ? 'theme.dark.css' : 'theme.light.css';
-  //   var cssFile = fs.readFileSync(path.resolve(__dirname, 'css', cssFileName), 'utf8');
-  //   mainWindow.webContents.insertCSS(cssFile);
-  // });
-
   mainWindow.webContents.on('did-finish-load', function () {
     ipcMain.on('get-release-url', function () {
       mainWindow.webContents.send('send-release-url', releaseUrl);
     });
-    // ipcMain.on('get-os-data', function () {
-    //   mainWindow.webContents.send('send-os-data', getOsData());
-    // });
+    ipcMain.on('get-os-data', function () {
+      mainWindow.webContents.send('send-os-data', getOsData());
+    });
     ipcMain.on('get-node-env', function () {
       mainWindow.webContents.send('send-node-env', process.env.NODE_ENV);
     });
@@ -72,21 +66,21 @@ app.on('ready', function () {
 
 
 // current helper to get os-Data into angular ...
-// function getOsData() {
-//   return {
-//     arch: os.arch(),
-//     cpus: os.cpus(),
-//     endianness: os.endianness(),
-//     freemem: os.freemem(),
-//     homedir: os.homedir(),
-//     hostname: os.hostname(),
-//     loadavg: os.loadavg(),
-//     networkInterfaces: os.networkInterfaces(),
-//     platform: os.platform(),
-//     release: os.release(),
-//     tmpdir: os.tmpdir(),
-//     totalmem: os.totalmem(),
-//     type: os.type(),
-//     uptime: os.uptime()
-//   };
-// }
+function getOsData() {
+  return {
+    arch: os.arch(),
+    cpus: os.cpus(),
+    endianness: os.endianness(),
+    freemem: os.freemem(),
+    homedir: os.homedir(),
+    hostname: os.hostname(),
+    loadavg: os.loadavg(),
+    networkInterfaces: os.networkInterfaces(),
+    platform: os.platform(),
+    release: os.release(),
+    tmpdir: os.tmpdir(),
+    totalmem: os.totalmem(),
+    type: os.type(),
+    uptime: os.uptime()
+  };
+}

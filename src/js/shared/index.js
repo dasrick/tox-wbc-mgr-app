@@ -9,6 +9,7 @@ module.exports = require('angular')
   ])
 
   .factory('CurrentUserService', require('./service/CurrentUserService'))
+  .factory('AppDataService', require('./service/AppDataService'))
 
   // mi-angular-resource-builder ///////////////////////////////////////////////////////////////////////////////////////
   .config(['ResourceBuilderProvider', function (ResourceBuilderProvider) {

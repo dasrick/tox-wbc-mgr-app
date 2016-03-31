@@ -14,7 +14,6 @@ require('angular-sanitize');
 require('angular-translate');
 require('angular-translate-loader-partial');
 require('angular-ui-bootstrap');
-require('angular-ui-notification');
 require('angular-ui-router');
 require('mi-angular-alert-service');
 require('mi-angular-resource-builder');
@@ -31,7 +30,6 @@ var requires = [
   'ngSanitize',
   'pascalprecht.translate',
   'ui.bootstrap',
-  'ui-notification',
   'ui.router',
   'mi.AlertService',
   'mi.ResourceBuilder',
