@@ -8,8 +8,9 @@ module.exports = require('angular')
     require('./mi-directive').name
   ])
 
-  .factory('CurrentUserService', require('./service/CurrentUserService'))
-  .factory('AppDataService', require('./service/AppDataService'))
+  .factory('CurrentUserService', require('./service/current-user-service'))
+  .factory('AppLocalData', require('./service/app-local-data-service'))
+  .factory('AppSessionData', require('./service/app-session-data-service'))
 
   // mi-angular-resource-builder ///////////////////////////////////////////////////////////////////////////////////////
   .config(['ResourceBuilderProvider', function (ResourceBuilderProvider) {

@@ -3,7 +3,7 @@
 /**
  * @ngInject
  */
-module.exports = function ($log, $timeout, $translate, app, autoUpdater, ipcRenderer, Menu, AlertService, AppDataService) {
+module.exports = function ($log, $timeout, $translate, app, autoUpdater, ipcRenderer, Menu, AlertService, AppSessionData) {
   var vm = this;
   // methods
   vm.updateNow = updateNow;
@@ -44,10 +44,10 @@ module.exports = function ($log, $timeout, $translate, app, autoUpdater, ipcRend
 
   ipcRenderer.on('send-release-url', function (sender, releaseUrl) {
     // trigger only once per app-run
-    if (AppDataService.getUpdateExecuted() !== true) {
+    if (AppSessionData.get('update-executed') !== true) {
       autoUpdater.setFeedURL(releaseUrl);
       autoUpdater.checkForUpdates();
-      AppDataService.setUpdateExecuted(true);
+      AppSessionData.set('update-executed', true);
     }
   });
 
