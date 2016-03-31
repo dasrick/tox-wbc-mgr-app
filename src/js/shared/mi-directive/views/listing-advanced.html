@@ -43,9 +43,9 @@
                                 <i class="fa fa-fw fa-ellipsis-v"></i>
                             </button>
                             <ul uib-dropdown-menu class="dropdown-menu-right">
-                                <li ng-repeat="item in item.menu"
-                                    ng-class="{'divider':item.type=='divider'}"
-                                    ng-include="'./views/mi-directive/controlbar-elements.html'"></li>
+                                <li ng-repeat="item in item.menu" ng-class="{'divider':item.type=='divider'}">
+                                    <mi-wbc-controlbar-element item="item"></mi-wbc-controlbar-element>
+                                </li>
                             </ul>
                         </div>
                     </div>
