@@ -7,7 +7,7 @@ module.exports = {
     url: '/login',
     views: {
       'content': {
-        templateUrl: './views/security/content.html',
+        templateUrl: 'mi-angular-wbc-pack/template/login.html',
         controller: 'LoginController as loginVm'
       }
     }
