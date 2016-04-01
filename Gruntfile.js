@@ -49,7 +49,7 @@ module.exports = function (grunt) {
           platform: 'win32',
           arch: 'x64',
           asar: true,
-          icon: 'assets/win/icon.ico'  // ToDo korektes icon setzen
+          icon: 'assets/win/icon.ico'
         }
       },
       osx: {
@@ -73,6 +73,7 @@ module.exports = function (grunt) {
           platform: 'linux',
           arch: 'x64',
           asar: true,
+          icon: 'assets/linux/icon.png',
           'app-bundle-id': 'de.dasrick.tox-wbc-mgr-app',
           'app-version': packagejson.version
         }
