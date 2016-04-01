@@ -1,7 +1,7 @@
 {
   "name": "tox-wbc-mgr-app",
   "productName": "wbcManager",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Unofficial Webcast Manager App based on electron and AngularJS",
   "author": "Enrico Hoffmann <dasrick@gmail.com>",
   "license": "MIT",
