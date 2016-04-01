@@ -21,10 +21,11 @@ module.exports = function (grunt) {
 //  };
 
   var BASENAME = 'tox-wbc-mgr-app';
-  var OSX_APPNAME = 'wbcManager';
-  var WINDOWS_APPNAME = BASENAME + ' (Alpha)';
-  var LINUX_APPNAME = BASENAME + ' (Alpha)';
+  var APP_PRODUCTNAME = packagejson.productName;
   var APP_DESCRIPTION = packagejson.description;
+  var OSX_APPNAME = APP_PRODUCTNAME;
+  var WINDOWS_APPNAME = APP_PRODUCTNAME + ' (Alpha)';
+  var LINUX_APPNAME = APP_PRODUCTNAME + ' (Alpha)';
   var OSX_OUT = './dist';
   var OSX_OUT_X64 = OSX_OUT + '/' + OSX_APPNAME + '-darwin-x64';
   var OSX_FILENAME = OSX_OUT_X64 + '/' + OSX_APPNAME + '.app';
