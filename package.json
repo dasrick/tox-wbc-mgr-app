@@ -63,10 +63,15 @@
     "mi-angular-wbc-pack": "^0.4.1",
     "npm-font-source-sans-pro": "^0.0.3",
     "shell-escape": "^0.2.0",
-    "webpack": "^1.12.14"
+    "webpack": "^1.12.14",
+    "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
-    "electron-window-state": "^2.0.0"
+    "deep-equal": "^1.0.1",
+    "electron-window-state": "^2.0.0",
+    "jsonfile": "^2.2.3",
+    "mkdirp": "^0.5.1",
+    "object-assign": "^4.0.1"
   },
   "scripts": {
     "start": "grunt",
