@@ -19,7 +19,7 @@
     "angular",
     "webcast"
   ],
-  "electron-version": "0.37.2",
+  "electron-version": "0.37.6",
   "devDependencies": {
     "angular": "^1.5.1",
     "angular-cache": "^4.5.0",
@@ -36,7 +36,7 @@
     "angular-ui-router": "^0.2.18",
     "api-check": "^7.5.5",
     "bootstrap": "^3.3.6",
-    "electron-prebuilt": "^0.37.2",
+    "electron-prebuilt": "0.37.6",
     "font-awesome": "^4.5.0",
     "grunt": "^0.4.5",
     "grunt-chmod": "^1.1.1",
